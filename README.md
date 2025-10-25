@@ -1,3 +1,44 @@
+# Farm Signals - Decentralized Agricultural Forward Contracts on Monad
+
+## Problem Statement
+Farmers worldwide face severe challenges with unpredictable crop prices and volatile markets. They lack reliable, transparent mechanisms to lock prices before harvest, making financial planning difficult and increasing exposure to market risks. Traditional intermediaries create delays, opacity, and often unfair pricing, further compounding farmers’ uncertainty.
+
+## Our Solution
+Farm Signals is a decentralized application built on the high-performance Monad blockchain that empowers farmers through transparent, immutable, and on-chain forward contracts. Farmers create contracts with fixed crop, quantity, price, and delivery date—all stored securely on Monad’s EVM-compatible network.
+
+Monad’s cutting-edge infrastructure with a throughput of 10,000 transactions per second and 800ms transaction finality makes real-time, cost-effective contract creation a reality. This scalability and speed are essential to enable responsive price locking and market signal propagation for farmers.
+
+## Technical Implementation Flow
+- **Smart Contracts:** Developed a Solidity FarmContract handling contract creation, retrieval, and event emission for downstream analytics.
+- **Monad Integration:** Deployed on Monad’s Testnet (Chain ID: 10143), utilizing its fast finality and low gas fees to provide a seamless UX.
+- **Frontend:** Next.js app with MetaMask & Wagmi integration facilitating live, interactive blockchain transactions.
+- **On-Chain Transparency:** Every forward contract is permanently logged on Monad, viewable via Monad Explorer, ensuring trust and auditability.
+- **Transaction Management:** Users initiate createContract transactions, instantly updating contractCount and making contracts queryable.
+
+## Use Case & Impact
+Farmers gain price certainty and reduce market risk by locking prices ahead of time. Buyers access transparent market data and contract status. The ecosystem fosters trust, liquidity, and data-driven pricing intelligence, unlocking a fairer agricultural marketplace.
+
+## Planned Features (Out of Scope for Current Version)
+- Automated escrow & settlement on contract fulfillment
+- Multi-party contract negotiation & matching
+- Oracle integration for real-world price feeds
+- Analytics dashboards & mobile support for broader adoption
+
+## Why Monad?
+Monad’s blazing transaction speeds and near-instant finality drastically improve UX and reliability compared to legacy blockchains. Its EVM compatibility enabled smooth developer adoption and integration with existing tooling. Leveraging Monad elevated our project’s viability and scalability, uniquely positioning Farm Signals as a next-gen solution for agricultural commerce.
+
+## Getting Started
+
+### Prerequisites
+- Node.js v18+
+- Yarn
+- MetaMask wallet configured for Monad Testnet (Chain ID: 10143)
+
+### Install dependencies
+
+
+
+
 # 🏗 Scaffold-ETH 2
 
 <h4 align="center">
