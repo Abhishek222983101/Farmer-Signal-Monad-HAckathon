@@ -4,6 +4,204 @@
  */
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
-const deployedContracts = {} as const;
+const deployedContracts = {
+  10143: {
+    FarmContract: {
+      address: "0x4C6ABa31dB5b1bf1BAC129eaC2a675F13e4449fc",
+      abi: [
+        {
+          inputs: [],
+          stateMutability: "nonpayable",
+          type: "constructor",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "contractId",
+              type: "uint256",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "farmer",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "string",
+              name: "crop",
+              type: "string",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "pricePerKg",
+              type: "uint256",
+            },
+          ],
+          name: "ContractCreated",
+          type: "event",
+        },
+        {
+          inputs: [],
+          name: "contractCount",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          name: "contracts",
+          outputs: [
+            {
+              internalType: "address",
+              name: "farmer",
+              type: "address",
+            },
+            {
+              internalType: "string",
+              name: "crop",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "quantity",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "pricePerKg",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "deliveryDate",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "createdAt",
+              type: "uint256",
+            },
+            {
+              internalType: "bool",
+              name: "isActive",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "_crop",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "_quantity",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "_pricePerKg",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "_deliveryDate",
+              type: "uint256",
+            },
+          ],
+          name: "createContract",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "contractId",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "_id",
+              type: "uint256",
+            },
+          ],
+          name: "getContract",
+          outputs: [
+            {
+              components: [
+                {
+                  internalType: "address",
+                  name: "farmer",
+                  type: "address",
+                },
+                {
+                  internalType: "string",
+                  name: "crop",
+                  type: "string",
+                },
+                {
+                  internalType: "uint256",
+                  name: "quantity",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "pricePerKg",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "deliveryDate",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "createdAt",
+                  type: "uint256",
+                },
+                {
+                  internalType: "bool",
+                  name: "isActive",
+                  type: "bool",
+                },
+              ],
+              internalType: "struct FarmContract.ForwardContract",
+              name: "",
+              type: "tuple",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+      ],
+      inheritedFunctions: {},
+      deployedOnBlock: 45327120,
+    },
+  },
+} as const;
 
 export default deployedContracts satisfies GenericContractsDeclaration;

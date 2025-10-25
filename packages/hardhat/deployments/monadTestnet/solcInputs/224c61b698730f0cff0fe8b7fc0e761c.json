@@ -1,0 +1,36 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/YourContract.sol": {
+      "content": "//SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\n/**\n * @title FarmContract\n * @dev A smart contract for managing agricultural forward contracts\n * @notice This contract allows farmers to create forward contracts for their crops\n * @author Farm Signals\n */\ncontract FarmContract {\n    /**\n     * @dev Struct representing a forward contract for agricultural products\n     * @param farmer The address of the farmer creating the contract\n     * @param crop The type of crop being contracted\n     * @param quantity The quantity of crop in the contract (in kg)\n     * @param pricePerKg The price per kilogram of the crop\n     * @param deliveryDate The timestamp when the crop should be delivered\n     * @param createdAt The timestamp when the contract was created\n     * @param isActive Whether the contract is currently active\n     */\n    struct ForwardContract {\n        address farmer;\n        string crop;\n        uint256 quantity;\n        uint256 pricePerKg;\n        uint256 deliveryDate;\n        uint256 createdAt;\n        bool isActive;\n    }\n\n    // State Variables\n    mapping(uint256 => ForwardContract) public contracts;\n    uint256 public contractCount;\n\n    // Events\n    /**\n     * @dev Emitted when a new forward contract is created\n     * @param contractId The unique identifier of the contract\n     * @param farmer The address of the farmer who created the contract\n     * @param crop The type of crop in the contract\n     * @param pricePerKg The price per kilogram of the crop\n     */\n    event ContractCreated(\n        uint256 indexed contractId,\n        address indexed farmer,\n        string crop,\n        uint256 pricePerKg\n    );\n\n    /**\n     * @dev Constructor function called once on contract deployment\n     * @notice Initializes the contract with contractCount starting at 0\n     */\n    constructor() {\n        contractCount = 0;\n    }\n\n    /**\n     * @dev Creates a new forward contract\n     * @param _crop The type of crop being contracted\n     * @param _quantity The quantity of crop in kilograms\n     * @param _pricePerKg The price per kilogram in wei\n     * @param _deliveryDate The timestamp when the crop should be delivered\n     * @return contractId The unique identifier of the created contract\n     */\n    function createContract(\n        string memory _crop,\n        uint256 _quantity,\n        uint256 _pricePerKg,\n        uint256 _deliveryDate\n    ) public returns (uint256 contractId) {\n        // Validate input parameters\n        require(bytes(_crop).length > 0, \"Crop name cannot be empty\");\n        require(_quantity > 0, \"Quantity must be greater than 0\");\n        require(_pricePerKg > 0, \"Price per kg must be greater than 0\");\n        require(_deliveryDate > block.timestamp, \"Delivery date must be in the future\");\n\n        // Increment contract counter\n        contractCount++;\n        contractId = contractCount;\n\n        // Create new forward contract\n        contracts[contractId] = ForwardContract({\n            farmer: msg.sender,\n            crop: _crop,\n            quantity: _quantity,\n            pricePerKg: _pricePerKg,\n            deliveryDate: _deliveryDate,\n            createdAt: block.timestamp,\n            isActive: true\n        });\n\n        // Emit event\n        emit ContractCreated(contractId, msg.sender, _crop, _pricePerKg);\n\n        return contractId;\n    }\n\n    /**\n     * @dev Retrieves a forward contract by its ID\n     * @param _id The unique identifier of the contract\n     * @return The forward contract struct\n     */\n    function getContract(uint256 _id) public view returns (ForwardContract memory) {\n        require(_id > 0 && _id <= contractCount, \"Contract does not exist\");\n        return contracts[_id];\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "paris",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

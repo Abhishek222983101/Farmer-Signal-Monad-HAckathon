@@ -1,78 +1,108 @@
 //SPDX-License-Identifier: MIT
-pragma solidity >=0.8.0 <0.9.0;
-
-// Useful for debugging. Remove when deploying to a live network.
-import "hardhat/console.sol";
-
-// Use openzeppelin to inherit battle-tested implementations (ERC20, ERC721, etc)
-// import "@openzeppelin/contracts/access/Ownable.sol";
+pragma solidity ^0.8.20;
 
 /**
- * A smart contract that allows changing a state variable of the contract and tracking the changes
- * It also allows the owner to withdraw the Ether in the contract
- * @author BuidlGuidl
+ * @title FarmContract
+ * @dev A smart contract for managing agricultural forward contracts
+ * @notice This contract allows farmers to create forward contracts for their crops
+ * @author Farm Signals
  */
-contract YourContract {
+contract FarmContract {
+    /**
+     * @dev Struct representing a forward contract for agricultural products
+     * @param farmer The address of the farmer creating the contract
+     * @param crop The type of crop being contracted
+     * @param quantity The quantity of crop in the contract (in kg)
+     * @param pricePerKg The price per kilogram of the crop
+     * @param deliveryDate The timestamp when the crop should be delivered
+     * @param createdAt The timestamp when the contract was created
+     * @param isActive Whether the contract is currently active
+     */
+    struct ForwardContract {
+        address farmer;
+        string crop;
+        uint256 quantity;
+        uint256 pricePerKg;
+        uint256 deliveryDate;
+        uint256 createdAt;
+        bool isActive;
+    }
+
     // State Variables
-    address public immutable owner;
-    string public greeting = "Building Unstoppable Apps!!!";
-    bool public premium = false;
-    uint256 public totalCounter = 0;
-    mapping(address => uint) public userGreetingCounter;
+    mapping(uint256 => ForwardContract) public contracts;
+    uint256 public contractCount;
 
-    // Events: a way to emit log statements from smart contract that can be listened to by external parties
-    event GreetingChange(address indexed greetingSetter, string newGreeting, bool premium, uint256 value);
+    // Events
+    /**
+     * @dev Emitted when a new forward contract is created
+     * @param contractId The unique identifier of the contract
+     * @param farmer The address of the farmer who created the contract
+     * @param crop The type of crop in the contract
+     * @param pricePerKg The price per kilogram of the crop
+     */
+    event ContractCreated(
+        uint256 indexed contractId,
+        address indexed farmer,
+        string crop,
+        uint256 pricePerKg
+    );
 
-    // Constructor: Called once on contract deployment
-    // Check packages/hardhat/deploy/00_deploy_your_contract.ts
-    constructor(address _owner) {
-        owner = _owner;
-    }
-
-    // Modifier: used to define a set of rules that must be met before or after a function is executed
-    // Check the withdraw() function
-    modifier isOwner() {
-        // msg.sender: predefined variable that represents address of the account that called the current function
-        require(msg.sender == owner, "Not the Owner");
-        _;
+    /**
+     * @dev Constructor function called once on contract deployment
+     * @notice Initializes the contract with contractCount starting at 0
+     */
+    constructor() {
+        contractCount = 0;
     }
 
     /**
-     * Function that allows anyone to change the state variable "greeting" of the contract and increase the counters
-     *
-     * @param _newGreeting (string memory) - new greeting to save on the contract
+     * @dev Creates a new forward contract
+     * @param _crop The type of crop being contracted
+     * @param _quantity The quantity of crop in kilograms
+     * @param _pricePerKg The price per kilogram in wei
+     * @param _deliveryDate The timestamp when the crop should be delivered
+     * @return contractId The unique identifier of the created contract
      */
-    function setGreeting(string memory _newGreeting) public payable {
-        // Print data to the hardhat chain console. Remove when deploying to a live network.
-        console.log("Setting new greeting '%s' from %s", _newGreeting, msg.sender);
+    function createContract(
+        string memory _crop,
+        uint256 _quantity,
+        uint256 _pricePerKg,
+        uint256 _deliveryDate
+    ) public returns (uint256 contractId) {
+        // Validate input parameters
+        require(bytes(_crop).length > 0, "Crop name cannot be empty");
+        require(_quantity > 0, "Quantity must be greater than 0");
+        require(_pricePerKg > 0, "Price per kg must be greater than 0");
+        require(_deliveryDate > block.timestamp, "Delivery date must be in the future");
 
-        // Change state variables
-        greeting = _newGreeting;
-        totalCounter += 1;
-        userGreetingCounter[msg.sender] += 1;
+        // Increment contract counter
+        contractCount++;
+        contractId = contractCount;
 
-        // msg.value: built-in global variable that represents the amount of ether sent with the transaction
-        if (msg.value > 0) {
-            premium = true;
-        } else {
-            premium = false;
-        }
+        // Create new forward contract
+        contracts[contractId] = ForwardContract({
+            farmer: msg.sender,
+            crop: _crop,
+            quantity: _quantity,
+            pricePerKg: _pricePerKg,
+            deliveryDate: _deliveryDate,
+            createdAt: block.timestamp,
+            isActive: true
+        });
 
-        // emit: keyword used to trigger an event
-        emit GreetingChange(msg.sender, _newGreeting, msg.value > 0, msg.value);
+        // Emit event
+        emit ContractCreated(contractId, msg.sender, _crop, _pricePerKg);
+
+        return contractId;
     }
 
     /**
-     * Function that allows the owner to withdraw all the Ether in the contract
-     * The function can only be called by the owner of the contract as defined by the isOwner modifier
+     * @dev Retrieves a forward contract by its ID
+     * @param _id The unique identifier of the contract
+     * @return The forward contract struct
      */
-    function withdraw() public isOwner {
-        (bool success, ) = owner.call{ value: address(this).balance }("");
-        require(success, "Failed to send Ether");
+    function getContract(uint256 _id) public view returns (ForwardContract memory) {
+        require(_id > 0 && _id <= contractCount, "Contract does not exist");
+        return contracts[_id];
     }
-
-    /**
-     * Function that allows the contract to receive ETH
-     */
-    receive() external payable {}
 }

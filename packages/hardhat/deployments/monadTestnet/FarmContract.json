@@ -1,0 +1,381 @@
+{
+  "address": "0x4C6ABa31dB5b1bf1BAC129eaC2a675F13e4449fc",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "contractId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "farmer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "crop",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "pricePerKg",
+          "type": "uint256"
+        }
+      ],
+      "name": "ContractCreated",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "contractCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "contracts",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "farmer",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "crop",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "quantity",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "pricePerKg",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "deliveryDate",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "createdAt",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "isActive",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_crop",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_quantity",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_pricePerKg",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_deliveryDate",
+          "type": "uint256"
+        }
+      ],
+      "name": "createContract",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "contractId",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_id",
+          "type": "uint256"
+        }
+      ],
+      "name": "getContract",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "farmer",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "crop",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "quantity",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "pricePerKg",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "deliveryDate",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "createdAt",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isActive",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct FarmContract.ForwardContract",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xc6ad759cec6161b640ec01044bcc163b088fc79c68f58beb6dd5137a31a2401c",
+  "receipt": {
+    "to": null,
+    "from": "0x2D1633390D55b96Ae51Dc49b419163Ff7b969e41",
+    "contractAddress": "0x4C6ABa31dB5b1bf1BAC129eaC2a675F13e4449fc",
+    "transactionIndex": 3,
+    "gasUsed": "583382",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xf0f64f1ad2edc7c3167fa58b0f474003c75003e0e5a545a2c6d9a4b15806cc1d",
+    "transactionHash": "0xc6ad759cec6161b640ec01044bcc163b088fc79c68f58beb6dd5137a31a2401c",
+    "logs": [],
+    "blockNumber": 45327120,
+    "cumulativeGasUsed": "1013782",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "224c61b698730f0cff0fe8b7fc0e761c",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"contractId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"farmer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"crop\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"pricePerKg\",\"type\":\"uint256\"}],\"name\":\"ContractCreated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"contractCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"contracts\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"farmer\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"crop\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"quantity\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"pricePerKg\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deliveryDate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAt\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_crop\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_quantity\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_pricePerKg\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_deliveryDate\",\"type\":\"uint256\"}],\"name\":\"createContract\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"contractId\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"getContract\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"farmer\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"crop\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"quantity\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"pricePerKg\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deliveryDate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"createdAt\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"}],\"internalType\":\"struct FarmContract.ForwardContract\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Farm Signals\",\"details\":\"A smart contract for managing agricultural forward contracts\",\"events\":{\"ContractCreated(uint256,address,string,uint256)\":{\"details\":\"Emitted when a new forward contract is created\",\"params\":{\"contractId\":\"The unique identifier of the contract\",\"crop\":\"The type of crop in the contract\",\"farmer\":\"The address of the farmer who created the contract\",\"pricePerKg\":\"The price per kilogram of the crop\"}}},\"kind\":\"dev\",\"methods\":{\"constructor\":{\"details\":\"Constructor function called once on contract deployment\"},\"createContract(string,uint256,uint256,uint256)\":{\"details\":\"Creates a new forward contract\",\"params\":{\"_crop\":\"The type of crop being contracted\",\"_deliveryDate\":\"The timestamp when the crop should be delivered\",\"_pricePerKg\":\"The price per kilogram in wei\",\"_quantity\":\"The quantity of crop in kilograms\"},\"returns\":{\"contractId\":\"The unique identifier of the created contract\"}},\"getContract(uint256)\":{\"details\":\"Retrieves a forward contract by its ID\",\"params\":{\"_id\":\"The unique identifier of the contract\"},\"returns\":{\"_0\":\"The forward contract struct\"}}},\"title\":\"FarmContract\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Initializes the contract with contractCount starting at 0\"}},\"notice\":\"This contract allows farmers to create forward contracts for their crops\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/YourContract.sol\":\"FarmContract\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/YourContract.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity ^0.8.20;\\n\\n/**\\n * @title FarmContract\\n * @dev A smart contract for managing agricultural forward contracts\\n * @notice This contract allows farmers to create forward contracts for their crops\\n * @author Farm Signals\\n */\\ncontract FarmContract {\\n    /**\\n     * @dev Struct representing a forward contract for agricultural products\\n     * @param farmer The address of the farmer creating the contract\\n     * @param crop The type of crop being contracted\\n     * @param quantity The quantity of crop in the contract (in kg)\\n     * @param pricePerKg The price per kilogram of the crop\\n     * @param deliveryDate The timestamp when the crop should be delivered\\n     * @param createdAt The timestamp when the contract was created\\n     * @param isActive Whether the contract is currently active\\n     */\\n    struct ForwardContract {\\n        address farmer;\\n        string crop;\\n        uint256 quantity;\\n        uint256 pricePerKg;\\n        uint256 deliveryDate;\\n        uint256 createdAt;\\n        bool isActive;\\n    }\\n\\n    // State Variables\\n    mapping(uint256 => ForwardContract) public contracts;\\n    uint256 public contractCount;\\n\\n    // Events\\n    /**\\n     * @dev Emitted when a new forward contract is created\\n     * @param contractId The unique identifier of the contract\\n     * @param farmer The address of the farmer who created the contract\\n     * @param crop The type of crop in the contract\\n     * @param pricePerKg The price per kilogram of the crop\\n     */\\n    event ContractCreated(\\n        uint256 indexed contractId,\\n        address indexed farmer,\\n        string crop,\\n        uint256 pricePerKg\\n    );\\n\\n    /**\\n     * @dev Constructor function called once on contract deployment\\n     * @notice Initializes the contract with contractCount starting at 0\\n     */\\n    constructor() {\\n        contractCount = 0;\\n    }\\n\\n    /**\\n     * @dev Creates a new forward contract\\n     * @param _crop The type of crop being contracted\\n     * @param _quantity The quantity of crop in kilograms\\n     * @param _pricePerKg The price per kilogram in wei\\n     * @param _deliveryDate The timestamp when the crop should be delivered\\n     * @return contractId The unique identifier of the created contract\\n     */\\n    function createContract(\\n        string memory _crop,\\n        uint256 _quantity,\\n        uint256 _pricePerKg,\\n        uint256 _deliveryDate\\n    ) public returns (uint256 contractId) {\\n        // Validate input parameters\\n        require(bytes(_crop).length > 0, \\\"Crop name cannot be empty\\\");\\n        require(_quantity > 0, \\\"Quantity must be greater than 0\\\");\\n        require(_pricePerKg > 0, \\\"Price per kg must be greater than 0\\\");\\n        require(_deliveryDate > block.timestamp, \\\"Delivery date must be in the future\\\");\\n\\n        // Increment contract counter\\n        contractCount++;\\n        contractId = contractCount;\\n\\n        // Create new forward contract\\n        contracts[contractId] = ForwardContract({\\n            farmer: msg.sender,\\n            crop: _crop,\\n            quantity: _quantity,\\n            pricePerKg: _pricePerKg,\\n            deliveryDate: _deliveryDate,\\n            createdAt: block.timestamp,\\n            isActive: true\\n        });\\n\\n        // Emit event\\n        emit ContractCreated(contractId, msg.sender, _crop, _pricePerKg);\\n\\n        return contractId;\\n    }\\n\\n    /**\\n     * @dev Retrieves a forward contract by its ID\\n     * @param _id The unique identifier of the contract\\n     * @return The forward contract struct\\n     */\\n    function getContract(uint256 _id) public view returns (ForwardContract memory) {\\n        require(_id > 0 && _id <= contractCount, \\\"Contract does not exist\\\");\\n        return contracts[_id];\\n    }\\n}\\n\",\"keccak256\":\"0x28c7fa8ffe21d635874448354cd18789c918e37bf8c777a4af2902d63d9cc2f7\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506000600155610972806100256000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063474da79a146100515780634bf3395b146100805780636ebc8c86146100a15780638736381a146100c1575b600080fd5b61006461005f3660046105b1565b6100ca565b6040516100779796959493929190610610565b60405180910390f35b61009361008e366004610676565b61019b565b604051908152602001610077565b6100b46100af3660046105b1565b61040e565b604051610077919061073b565b61009360015481565b600060208190529081526040902080546001820180546001600160a01b0390921692916100f6906107aa565b80601f0160208091040260200160405190810160405280929190818152602001828054610122906107aa565b801561016f5780601f106101445761010080835404028352916020019161016f565b820191906000526020600020905b81548152906001019060200180831161015257829003601f168201915b505050600284015460038501546004860154600587015460069097015495969295919450925060ff1687565b6000808551116101f25760405162461bcd60e51b815260206004820152601960248201527f43726f70206e616d652063616e6e6f7420626520656d7074790000000000000060448201526064015b60405180910390fd5b600084116102425760405162461bcd60e51b815260206004820152601f60248201527f5175616e74697479206d7573742062652067726561746572207468616e20300060448201526064016101e9565b6000831161029e5760405162461bcd60e51b815260206004820152602360248201527f507269636520706572206b67206d75737420626520677265617465722074686160448201526206e20360ec1b60648201526084016101e9565b4282116102f95760405162461bcd60e51b815260206004820152602360248201527f44656c69766572792064617465206d75737420626520696e207468652066757460448201526275726560e81b60648201526084016101e9565b60018054906000610309836107e4565b9091555050600180546040805160e08101825233815260208082018a81528284018a905260608301899052608083018890524260a084015260c08301869052600085815291829052929020815181546001600160a01b0319166001600160a01b03909116178155915192945092909190820190610386908261085a565b506040828101516002830155606083015160038301556080830151600483015560a0830151600583015560c0909201516006909101805460ff191691151591909117905551339082907f4bc2dcc4973d647d521a2f894a8165959debdaa2cd6d64fc3b5079a8c767777e906103fe908990889061091a565b60405180910390a3949350505050565b6104596040518060e0016040528060006001600160a01b0316815260200160608152602001600081526020016000815260200160008152602001600081526020016000151581525090565b60008211801561046b57506001548211155b6104b75760405162461bcd60e51b815260206004820152601760248201527f436f6e747261637420646f6573206e6f7420657869737400000000000000000060448201526064016101e9565b60008281526020818152604091829020825160e0810190935280546001600160a01b0316835260018101805491928401916104f1906107aa565b80601f016020809104026020016040519081016040528092919081815260200182805461051d906107aa565b801561056a5780601f1061053f5761010080835404028352916020019161056a565b820191906000526020600020905b81548152906001019060200180831161054d57829003601f168201915b50505091835250506002820154602082015260038201546040820152600482015460608201526005820154608082015260069091015460ff16151560a09091015292915050565b6000602082840312156105c357600080fd5b5035919050565b6000815180845260005b818110156105f0576020818501810151868301820152016105d4565b506000602082860101526020601f19601f83011685010191505092915050565b6001600160a01b038816815260e060208201819052600090610634908301896105ca565b6040830197909752506060810194909452608084019290925260a0830152151560c09091015292915050565b634e487b7160e01b600052604160045260246000fd5b6000806000806080858703121561068c57600080fd5b843567ffffffffffffffff808211156106a457600080fd5b818701915087601f8301126106b857600080fd5b8135818111156106ca576106ca610660565b604051601f8201601f19908116603f011681019083821181831017156106f2576106f2610660565b816040528281528a602084870101111561070b57600080fd5b82602086016020830137600060209382018401529a91890135995050604088013597606001359650945050505050565b602080825282516001600160a01b03168282015282015160e0604083015260009061076a6101008401826105ca565b90506040840151606084015260608401516080840152608084015160a084015260a084015160c084015260c0840151151560e08401528091505092915050565b600181811c908216806107be57607f821691505b6020821081036107de57634e487b7160e01b600052602260045260246000fd5b50919050565b60006001820161080457634e487b7160e01b600052601160045260246000fd5b5060010190565b601f82111561085557600081815260208120601f850160051c810160208610156108325750805b601f850160051c820191505b818110156108515782815560010161083e565b5050505b505050565b815167ffffffffffffffff81111561087457610874610660565b6108888161088284546107aa565b8461080b565b602080601f8311600181146108bd57600084156108a55750858301515b600019600386901b1c1916600185901b178555610851565b600085815260208120601f198616915b828110156108ec578886015182559484019460019091019084016108cd565b508582101561090a5787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b60408152600061092d60408301856105ca565b9050826020830152939250505056fea264697066735822122081ba4fddec6fe34f60ccd06b06fd78ed45ab58f926ecd2cc187215fae694081764736f6c63430008140033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c8063474da79a146100515780634bf3395b146100805780636ebc8c86146100a15780638736381a146100c1575b600080fd5b61006461005f3660046105b1565b6100ca565b6040516100779796959493929190610610565b60405180910390f35b61009361008e366004610676565b61019b565b604051908152602001610077565b6100b46100af3660046105b1565b61040e565b604051610077919061073b565b61009360015481565b600060208190529081526040902080546001820180546001600160a01b0390921692916100f6906107aa565b80601f0160208091040260200160405190810160405280929190818152602001828054610122906107aa565b801561016f5780601f106101445761010080835404028352916020019161016f565b820191906000526020600020905b81548152906001019060200180831161015257829003601f168201915b505050600284015460038501546004860154600587015460069097015495969295919450925060ff1687565b6000808551116101f25760405162461bcd60e51b815260206004820152601960248201527f43726f70206e616d652063616e6e6f7420626520656d7074790000000000000060448201526064015b60405180910390fd5b600084116102425760405162461bcd60e51b815260206004820152601f60248201527f5175616e74697479206d7573742062652067726561746572207468616e20300060448201526064016101e9565b6000831161029e5760405162461bcd60e51b815260206004820152602360248201527f507269636520706572206b67206d75737420626520677265617465722074686160448201526206e20360ec1b60648201526084016101e9565b4282116102f95760405162461bcd60e51b815260206004820152602360248201527f44656c69766572792064617465206d75737420626520696e207468652066757460448201526275726560e81b60648201526084016101e9565b60018054906000610309836107e4565b9091555050600180546040805160e08101825233815260208082018a81528284018a905260608301899052608083018890524260a084015260c08301869052600085815291829052929020815181546001600160a01b0319166001600160a01b03909116178155915192945092909190820190610386908261085a565b506040828101516002830155606083015160038301556080830151600483015560a0830151600583015560c0909201516006909101805460ff191691151591909117905551339082907f4bc2dcc4973d647d521a2f894a8165959debdaa2cd6d64fc3b5079a8c767777e906103fe908990889061091a565b60405180910390a3949350505050565b6104596040518060e0016040528060006001600160a01b0316815260200160608152602001600081526020016000815260200160008152602001600081526020016000151581525090565b60008211801561046b57506001548211155b6104b75760405162461bcd60e51b815260206004820152601760248201527f436f6e747261637420646f6573206e6f7420657869737400000000000000000060448201526064016101e9565b60008281526020818152604091829020825160e0810190935280546001600160a01b0316835260018101805491928401916104f1906107aa565b80601f016020809104026020016040519081016040528092919081815260200182805461051d906107aa565b801561056a5780601f1061053f5761010080835404028352916020019161056a565b820191906000526020600020905b81548152906001019060200180831161054d57829003601f168201915b50505091835250506002820154602082015260038201546040820152600482015460608201526005820154608082015260069091015460ff16151560a09091015292915050565b6000602082840312156105c357600080fd5b5035919050565b6000815180845260005b818110156105f0576020818501810151868301820152016105d4565b506000602082860101526020601f19601f83011685010191505092915050565b6001600160a01b038816815260e060208201819052600090610634908301896105ca565b6040830197909752506060810194909452608084019290925260a0830152151560c09091015292915050565b634e487b7160e01b600052604160045260246000fd5b6000806000806080858703121561068c57600080fd5b843567ffffffffffffffff808211156106a457600080fd5b818701915087601f8301126106b857600080fd5b8135818111156106ca576106ca610660565b604051601f8201601f19908116603f011681019083821181831017156106f2576106f2610660565b816040528281528a602084870101111561070b57600080fd5b82602086016020830137600060209382018401529a91890135995050604088013597606001359650945050505050565b602080825282516001600160a01b03168282015282015160e0604083015260009061076a6101008401826105ca565b90506040840151606084015260608401516080840152608084015160a084015260a084015160c084015260c0840151151560e08401528091505092915050565b600181811c908216806107be57607f821691505b6020821081036107de57634e487b7160e01b600052602260045260246000fd5b50919050565b60006001820161080457634e487b7160e01b600052601160045260246000fd5b5060010190565b601f82111561085557600081815260208120601f850160051c810160208610156108325750805b601f850160051c820191505b818110156108515782815560010161083e565b5050505b505050565b815167ffffffffffffffff81111561087457610874610660565b6108888161088284546107aa565b8461080b565b602080601f8311600181146108bd57600084156108a55750858301515b600019600386901b1c1916600185901b178555610851565b600085815260208120601f198616915b828110156108ec578886015182559484019460019091019084016108cd565b508582101561090a5787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b60408152600061092d60408301856105ca565b9050826020830152939250505056fea264697066735822122081ba4fddec6fe34f60ccd06b06fd78ed45ab58f926ecd2cc187215fae694081764736f6c63430008140033",
+  "devdoc": {
+    "author": "Farm Signals",
+    "details": "A smart contract for managing agricultural forward contracts",
+    "events": {
+      "ContractCreated(uint256,address,string,uint256)": {
+        "details": "Emitted when a new forward contract is created",
+        "params": {
+          "contractId": "The unique identifier of the contract",
+          "crop": "The type of crop in the contract",
+          "farmer": "The address of the farmer who created the contract",
+          "pricePerKg": "The price per kilogram of the crop"
+        }
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "details": "Constructor function called once on contract deployment"
+      },
+      "createContract(string,uint256,uint256,uint256)": {
+        "details": "Creates a new forward contract",
+        "params": {
+          "_crop": "The type of crop being contracted",
+          "_deliveryDate": "The timestamp when the crop should be delivered",
+          "_pricePerKg": "The price per kilogram in wei",
+          "_quantity": "The quantity of crop in kilograms"
+        },
+        "returns": {
+          "contractId": "The unique identifier of the created contract"
+        }
+      },
+      "getContract(uint256)": {
+        "details": "Retrieves a forward contract by its ID",
+        "params": {
+          "_id": "The unique identifier of the contract"
+        },
+        "returns": {
+          "_0": "The forward contract struct"
+        }
+      }
+    },
+    "title": "FarmContract",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "constructor": {
+        "notice": "Initializes the contract with contractCount starting at 0"
+      }
+    },
+    "notice": "This contract allows farmers to create forward contracts for their crops",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 23,
+        "contract": "contracts/YourContract.sol:FarmContract",
+        "label": "contracts",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_uint256,t_struct(ForwardContract)18_storage)"
+      },
+      {
+        "astId": 25,
+        "contract": "contracts/YourContract.sol:FarmContract",
+        "label": "contractCount",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_uint256,t_struct(ForwardContract)18_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => struct FarmContract.ForwardContract)",
+        "numberOfBytes": "32",
+        "value": "t_struct(ForwardContract)18_storage"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(ForwardContract)18_storage": {
+        "encoding": "inplace",
+        "label": "struct FarmContract.ForwardContract",
+        "members": [
+          {
+            "astId": 5,
+            "contract": "contracts/YourContract.sol:FarmContract",
+            "label": "farmer",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address"
+          },
+          {
+            "astId": 7,
+            "contract": "contracts/YourContract.sol:FarmContract",
+            "label": "crop",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 9,
+            "contract": "contracts/YourContract.sol:FarmContract",
+            "label": "quantity",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 11,
+            "contract": "contracts/YourContract.sol:FarmContract",
+            "label": "pricePerKg",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 13,
+            "contract": "contracts/YourContract.sol:FarmContract",
+            "label": "deliveryDate",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 15,
+            "contract": "contracts/YourContract.sol:FarmContract",
+            "label": "createdAt",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 17,
+            "contract": "contracts/YourContract.sol:FarmContract",
+            "label": "isActive",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_bool"
+          }
+        ],
+        "numberOfBytes": "224"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
